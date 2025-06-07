@@ -10,6 +10,7 @@ if len(sys.argv) != 2:
 book_file_path = sys.argv[1]
 
 def main():
+    counter = 9
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {book_file_path}")
 
@@ -22,8 +23,11 @@ def main():
         if k.isalpha(): print(f"{k}: {v}")
 
     print("---------- Common Words --------")
-    for k,v in sorted_dict_word_list(book_file_path):
-        print(f"{k}: {v}")
+
+    while counter < 11:
+        for k,v in sorted_dict_word_list(book_file_path): 
+            print(f"{k}: {v}")
+            counter += 1
     print("============= END ===============")
 
 main()
